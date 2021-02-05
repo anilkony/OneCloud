@@ -25,6 +25,9 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/M
 # > DnsFilter
 git clone https://github.com/garypang13/luci-app-dnsfilter package/community/luci-app-dnsfilter
 #
+# > GoWebDav
+git clone https://github.com/project-openwrt/openwrt-gowebdav package/community/openwrt-gowebdav
+#
 # > HelloWorld (vssr)
 git clone https://github.com/jerrykuku/lua-maxminddb package/community/lua-maxminddb
 git clone https://github.com/jerrykuku/luci-app-vssr package/community/luci-app-vssr
@@ -33,17 +36,18 @@ git clone https://github.com/jerrykuku/luci-app-vssr package/community/luci-app-
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/community/luci-app-openclash
 #
 
-
 # 个性化配置修改
 #
 # > Mod
 #sed -i '$i '"sed -i '/luciname/d' /usr/lib/lua/luci/version.lua"'' package/lean/default-settings/files/zzz-default-settings
-#sed -i '$i '"echo 'luciname = \"w8ves\"' >> /usr/lib/lua/luci/version.lua"'' package/lean/default-settings/files/zzz-default-settings
+#sed -i '$i '"echo 'luciname = \"Limitless\"' >> /usr/lib/lua/luci/version.lua"'' package/lean/default-settings/files/zzz-default-settings
 sed -i '$i '"sed -i '/luciversion/d' /usr/lib/lua/luci/version.lua"'' package/lean/default-settings/files/zzz-default-settings
 sed -i '$i '"echo 'luciversion = \"w8ves\"' >> /usr/lib/lua/luci/version.lua"'' package/lean/default-settings/files/zzz-default-settings
 #
 # > 修改插件位置
 sed -i 's/\"services\"/\"network\"/g' feeds/luci/applications/luci-app-upnp/luasrc/controller/upnp.lua
+sed -i '/\"NAS\"/d' package/community/openwrt-gowebdav/luci-app-gowebdav/luasrc/controller/gowebdav.lua
+sed -i 's/\"nas\"/\"services\"/g' package/community/openwrt-gowebdav/luci-app-gowebdav/luasrc/controller/gowebdav.lua
 #
 # > 修改插件名字
 sed -i 's/\"CPU 使用率（%）\"/\"CPU负载\"/g' feeds/luci/modules/luci-base/po/zh-cn/base.po
