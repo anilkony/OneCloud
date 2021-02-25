@@ -26,9 +26,9 @@ env:
   CONFIG_FILE: .config
   DIY_P1_SH: feeds.sh
   DIY_P2_SH: mod.sh
-  UPLOAD_BIN_DIR: false
+  UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
-  UPLOAD_COWTRANSFER: false
+  UPLOAD_COWTRANSFER: true
   UPLOAD_WETRANSFER: false
   UPLOAD_RELEASE: false
   REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
